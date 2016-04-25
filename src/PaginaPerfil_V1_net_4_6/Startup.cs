@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Data.Entity;
+using PaginaPerfil_V1_net_4_6.Models;
 
 namespace PaginaPerfil_V1_net_4_6
 {
@@ -18,7 +19,8 @@ namespace PaginaPerfil_V1_net_4_6
             // Set up configuration sources.
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
-                .AddEnvironmentVariables();
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+            builder.AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 
@@ -30,12 +32,10 @@ namespace PaginaPerfil_V1_net_4_6
             // Add framework services.
             services.AddMvc();
 
-            //services.AddEntityFramework()
-            //    .AddSqlServer()
-            //    .AddDbContext<BookContext>(options =>
-            //    {
-            //        options.UseSqlServer(Configuration.Get("Data:ConnectionString"));
-            //    });
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<PaginaPerfil_V1_net_4_6Context>(options =>
+                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));                     
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
