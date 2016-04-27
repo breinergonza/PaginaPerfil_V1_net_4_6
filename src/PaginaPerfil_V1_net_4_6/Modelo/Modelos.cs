@@ -29,4 +29,10 @@ namespace PaginaPerfil_V1_net_4_6.Modelo
         public string Apellido { get; set; }
         public string Ciudad { get; set; }
     }
+
+    public class Maps
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+    }
 }

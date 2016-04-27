@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="~/css/font-awesome/css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="~/css/adonis.min.css" type="text/css">
 
+        <link href="~/css/video.css" rel="stylesheet" />
+
         <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,thin,light&amp;lang=en" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     </environment>
@@ -21,6 +23,9 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+
+
+
 </head>
 <body id="page-top">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
@@ -34,38 +39,23 @@
                 </button>
                 <!-- <a class="navbar-brand page-scroll" href="#page-top">Adonis</a> -->
                 <!-- Replace With Your Logo -->
-                <a class="navbar-brand navbar-logo page-scroll" href="#page-top">
+                <a class="navbar-brand navbar-logo page-scroll" asp-controller="Home" asp-action="Index">
                     <img src="~/img/logo.png" alt="Logo">
                 </a>
             </div>
 
             <!-- Main Navigation -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">                   
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a asp-controller="Home" asp-action="Index">Inicio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about-us">About Us</a>
+                        <a asp-controller="Contactoes" asp-action="Index">Lista de contactos</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#our-work">Our Work</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li>
-                        <a asp-controller="Home" asp-action="About">About</a>
-                    </li>
-                    <li>
-                        <a asp-controller="Home" asp-action="Contact">Contact</a>
-                    </li>
-                    <li>
-                        <a asp-controller="Pie" asp-action="Index">Pie</a>
-                    </li>
+                        <a asp-controller="Maps" asp-action="Index">Sedes</a>
+                    </li>                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -75,6 +65,9 @@
 
 
     @RenderBody()
+
+    <!-- Back to top -->
+    <a href="#" id="back-top"><i class="fa fa-angle-up fa-2x"></i></a>
     <hr />
     <footer>
         <p>&copy; @DateTime.Now.Year - Breiner Gonzalez</p>
@@ -88,6 +81,9 @@
         <script src="~/js/bootstrap.min.js"></script>
         <script src="~/js/jquery.easing.min.js"></script>
         <script src="~/js/adonis.min.js"></script>
+
+        <script src="~/js/video.js"></script>
+
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"

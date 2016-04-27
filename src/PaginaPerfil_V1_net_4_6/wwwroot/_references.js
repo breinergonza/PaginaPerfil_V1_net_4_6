@@ -5,6 +5,7 @@
 /// <reference path="js/jquery.easing.min.js" />
 /// <reference path="js/jquery.js" />
 /// <reference path="js/site.js" />
+/// <reference path="js/video.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
 /// <reference path="lib/jquery/dist/jquery.js" />
 /// <reference path="lib/jquery-validation/dist/jquery.validate.js" />

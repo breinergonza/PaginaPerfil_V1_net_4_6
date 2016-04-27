@@ -15,14 +15,14 @@ namespace PaginaPerfil_V1_net_4_6.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Descripcion 'Acerca de'.";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Descricpion 'Contact'.";
 
             return View();
         }

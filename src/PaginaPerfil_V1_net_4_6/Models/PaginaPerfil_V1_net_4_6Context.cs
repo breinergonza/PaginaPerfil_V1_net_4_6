@@ -26,5 +26,6 @@ namespace PaginaPerfil_V1_net_4_6.Models
 
         public DbSet<Contacto> Contacto { get; set; }
         public DbSet<Ciudad> Ciudad { get; set; }
+        public DbSet<Maps> Maps { get; set; }
     }
 }
