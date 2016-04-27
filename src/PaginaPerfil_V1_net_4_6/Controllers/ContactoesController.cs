@@ -5,6 +5,8 @@ using Microsoft.Data.Entity;
 using PaginaPerfil_V1_net_4_6.Modelo;
 using PaginaPerfil_V1_net_4_6.Models;
 using System.Collections.Generic;
+using System.Net;
+using System;
 
 namespace PaginaPerfil_V1_net_4_6.Controllers
 {
@@ -28,7 +30,7 @@ namespace PaginaPerfil_V1_net_4_6.Controllers
                 lt.Id = cn.Id;
                 lt.Nombre = cn.Nombre;
                 lt.Apellido = cn.Apellido;
-                lt.Ciudad = _context.Ciudad.First(y => y.Id == cn.Id).Nombre;
+                //lt.Ciudad = _context.Ciudad.First(y => y.Id == cn.Id).Nombre;
                 cnt.Add(lt);                
             }
 
@@ -54,7 +56,7 @@ namespace PaginaPerfil_V1_net_4_6.Controllers
         }
 
         // GET: Contactoes/Create
-        public IActionResult Create()
+        public IActionResult Enviar()
         {
             return View();
         }
@@ -62,12 +64,18 @@ namespace PaginaPerfil_V1_net_4_6.Controllers
         // POST: Contactoes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Contacto contacto)
+        public IActionResult Enviar(Contacto contacto)
         {
             if (ModelState.IsValid)
             {
                 _context.Contacto.Add(contacto);
                 _context.SaveChanges();
+
+                if (contacto.Email != null)
+                {
+                    //EnviarMail(contacto.Email);
+                }
+
                 return RedirectToAction("Index");
             }
             return View(contacto);
@@ -131,6 +139,9 @@ namespace PaginaPerfil_V1_net_4_6.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+                
                
     }
+
+    
 }

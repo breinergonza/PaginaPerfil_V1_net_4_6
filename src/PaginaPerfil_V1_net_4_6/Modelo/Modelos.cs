@@ -13,6 +13,8 @@ namespace PaginaPerfil_V1_net_4_6.Modelo
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int Ciudad { get; set; }
+        public string Email { get; set; }
+        public string Mensaje { get; set; }
     }
 
     public class Ciudad

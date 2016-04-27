@@ -1,0 +1,91 @@
+@model PaginaPerfil_V1_net_4_6.Modelo.Contacto
+
+@{
+    ViewData["Title"] = "Ponte en contacto";
+    Layout = "_OnePage";
+}
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <h1 class="section-heading text-center white">Ponte en contacto...</h1>
+            <div class="col-md-7">
+                <form asp-action="Create" class="form-horizontal form-control-wrapper">
+                    <div class="form-horizontal">
+                        
+                        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            
+                            <div class="col-md-10">
+                                <input asp-for="Nombre" placeholder="Nombre" type="text" value="" required />
+                                <span asp-validation-for="Nombre" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          
+                            <div class="col-md-10">
+                                <input asp-for="Apellido" placeholder="Apellido" type="text" value="" required/>
+                                <span asp-validation-for="Apellido" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                         
+                            <div class="col-md-10">
+                                <input asp-for="Ciudad" placeholder="Ciudad" type="text" value="" required/>
+                                <span asp-validation-for="Ciudad" class="text-danger" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input asp-for="Email" placeholder="Email" type="email" value="" required />
+                                <span asp-validation-for="Email" class="text-danger" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input asp-for="Mensaje" placeholder="Mensaje" type="text" value="" required />
+                                <span asp-validation-for="Mensaje" class="text-danger" />
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Enviar"  class="btn btn-primary submit-button" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5 contact-right">
+                <p class="lead white"><i class="fa fa-home contact-icon"></i>Bogota, Carrera 8f #166-74 Int 10 Apto 201</p>
+                <p class="lead white"><i class="fa fa-phone"></i>311 652 05 74</p>
+                <p class="lead"><i class="fa fa-envelope"></i><a class="white" href="mailto:breinergonza@hotmail.com">breinergonza@hotmail.com</a></p>
+            </div>
+        </div>
+        <div class="social">
+            <div class="follow-us">
+                <a href="https://www.facebook.com/" class="" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/" class="" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="http://instagram.com/" class="" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <p class="text-center copyright white">@DateTime.Now.Year - Breiner Gonzalez.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
